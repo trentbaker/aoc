@@ -24,7 +24,6 @@ val deltas: List<Pair<Int, Int?>> = allSeatIDs.mapIndexed { index, i ->
     i to allSeatIDs.getOrNull(index + 1)?.let { it - i }
 }.filter { it.second != null }
 
-val mySeat = deltas.first { it.second == 2 }.first // find the seat missing the next seat
-    + 1 // and add one to get my seat
+val mySeat = deltas.first { it.second == 2 }.first + 1
 
 println(mySeat)
